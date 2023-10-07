@@ -3,6 +3,34 @@ var router = express.Router();
 
 const { connectToDB, ObjectId } = require("../utils/db");
 
+
+/* GET event form */
+router.get("/event/new", async function (req, res) {
+  try {
+    res.render("pages/event/new");
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
+/* Handle the Form */
+router.post("/event/new/submit", async function (req, res) {
+  const db = await connectToDB();
+  try {
+    console.log(req.body);
+    // req.body.createdAt = new Date();
+    // req.body.modifiedAt = new Date();
+
+    // let result = await db.collection("bookings").insertOne(req.body);
+    res.status(201).json({ msg: success });
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  } finally {
+    await db.client.close();
+  }
+});
+
+
 /* Display all Bookings */
 router.get("/event", async function (req, res) {
   const db = await connectToDB();

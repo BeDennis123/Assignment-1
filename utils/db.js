@@ -1,7 +1,7 @@
 const { MongoClient, ObjectId } = require('mongodb');
 
-process.env.MONGODB_URI = 'mongodb://jjj02:bqC2ptqvfeflfVlp3GEh6XsBXHNiuErxBF4ErI3y4BKqjRS4B4MtosaaIeWDORcr64NecXkO5CyJACDb4kO83A==@jjj02.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@jjj02@.documents.azure.com:10255/?ssl=true';
-
+// TODO: Updte your own MongoDB connection string
+process.env.MONGODB_URI = 'mongodb://admin:43JEjQfx@192.168.0.123:27017/?readPreference=primary&ssl=false&directConnection=true&authMechanism=DEFAULT'
 if (!process.env.MONGODB_URI) {
     // throw new Error('Please define the MONGODB_URI environment variable inside .env.local');
     process.env.MONGODB_URI = 'mongodb://localhost:27017';

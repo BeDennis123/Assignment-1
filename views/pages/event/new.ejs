@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../../partials/head'); %>
+  </head>
+
+  <body>
+    <%- include('../../partials/header'); %>
+  </body>
+
+  <main>
+    <div class="container">
+      <form action="/event/new/submit" method="POST">
+        <div class="col row">
+          <div class="col-6">
+            <div class="form-group mb-3">
+              <label for="eventTitle" class="col col-form-label"
+                >Event title</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="eventTitle"
+                id="eventTitle"
+                required
+              />
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="organizer" class="col-sm-2 col-form-label"
+                >Organizer</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="organizer"
+                id="organizer"
+                required
+              />
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="datetime" class="col-sm-2 col-form-label"
+                >Datetime</label
+              >
+              <input
+                type="datetime-local"
+                class="form-control"
+                name="datetime"
+                id="datetime"
+                placeholder="06/12/2024, 13:00"
+                required
+              />
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="location" class="col-sm-2 col-form-label"
+                >Location</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="location"
+                id="location"
+                placeholder="Apartment, studio or floor"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="form-group mb-3">
+              <label for="description" class="col-sm-2 col-form-label"
+                >Description</label
+              >
+              <textarea
+                rows="5"
+                type="textarea"
+                class="form-control"
+                name="description"
+                id="description"
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="quota" class="col-sm-2 col-form-label">Quota</label>
+              <input
+                type="text"
+                class="form-control"
+                name="quota"
+                id="quota"
+                placeholder="10"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="image" class="col col-form-label">Image</label>
+              <input
+                type="url"
+                class="form-control"
+                name="image"
+                id="image"
+                placeholder="http://image.com/example.jpg"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-row-reverse">
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script>
+
+  </script>
+
+  <footer><%- include('../../partials/footer'); %></footer>
+</html>
