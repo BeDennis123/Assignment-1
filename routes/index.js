@@ -8,7 +8,7 @@ router.get("/event", async function (req, res) {
   const db = await connectToDB();
   try {
     let results = await db.collection("bookings").find().toArray();
-    res.render("event", { bookings: results });
+    res.render("pages/event", { bookings: results });
   } catch (err) {
     res.status(400).json({ message: err.message });
   } finally {
