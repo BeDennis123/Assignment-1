@@ -1,123 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('../../partials/head'); %>
-  </head>
 
-  <body>
-    <%- include('../../partials/header'); %>
-  </body>
+<head>
+  <%- include('../../partials/head'); %>
+</head>
 
-  <main>
-    <div class="container">
-      <form action="/event/new/submit" method="POST">
-        <div class="col row">
-          <div class="col-6">
-            <div class="form-group mb-3">
-              <label for="eventTitle" class="col col-form-label"
-                >Event title</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                name="eventTitle"
-                id="eventTitle"
-                required
-              />
-            </div>
+<body>
+  <%- include('../../partials/header'); %>
+</body>
 
-            <div class="form-group mb-3">
-              <label for="organizer" class="col-sm-2 col-form-label"
-                >Organizer</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                name="organizer"
-                id="organizer"
-                required
-              />
-            </div>
-
-            <div class="form-group mb-3">
-              <label for="datetime" class="col-sm-2 col-form-label"
-                >Datetime</label
-              >
-              <input
-                type="datetime-local"
-                class="form-control"
-                name="datetime"
-                id="datetime"
-                placeholder="06/12/2024, 13:00"
-                required
-              />
-            </div>
-
-            <div class="form-group mb-3">
-              <label for="location" class="col-sm-2 col-form-label"
-                >Location</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                name="location"
-                id="location"
-                placeholder="Apartment, studio or floor"
-                required
-              />
-            </div>
+<main>
+  <div class="container">
+    <form id="eventForm" action="/event/new" method="POST">
+      <div class="col row">
+        <container class="mt-3">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="http://localhost:3000/">Home</a></li>
+              <li class="breadcrumb-item"><a href="/event">Event</a></li>
+              <li class="breadcrumb-item active" aria-current="page">New Event</li>
+            </ol>
+          </nav>
+        </container>
+        <div class="col-6">
+          <div class="form-group mb-3">
+            <label for="eventTitle" class="col col-form-label">Event title</label>
+            <input type="text" class="form-control" name="eventTitle" id="eventTitle" required />
           </div>
 
-          <div class="col-6">
-            <div class="form-group mb-3">
-              <label for="description" class="col-sm-2 col-form-label"
-                >Description</label
-              >
-              <textarea
-                rows="5"
-                type="textarea"
-                class="form-control"
-                name="description"
-                id="description"
-                required
-              ></textarea>
-            </div>
+          <div class="form-group mb-3">
+            <label for="organizer" class="col-sm-2 col-form-label">Organizer</label>
+            <input type="text" class="form-control" name="organizer" id="organizer" required />
+          </div>
 
-            <div class="form-group mb-3">
-              <label for="quota" class="col-sm-2 col-form-label">Quota</label>
-              <input
-                type="text"
-                class="form-control"
-                name="quota"
-                id="quota"
-                placeholder="10"
-                required
-              />
-            </div>
+          <div class="form-group mb-3">
+            <label for="datetime" class="col-sm-2 col-form-label">Datetime</label>
+            <input type="datetime-local" class="form-control" name="datetime" id="datetime"
+              placeholder="06/12/2024, 13:00" required />
+          </div>
 
-            <div class="form-group">
-              <label for="image" class="col col-form-label">Image</label>
-              <input
-                type="url"
-                class="form-control"
-                name="image"
-                id="image"
-                placeholder="http://image.com/example.jpg"
-                required
-              />
-            </div>
+          <div class="form-group mb-3">
+            <label for="location" class="col-sm-2 col-form-label">Location</label>
+            <input type="text" class="form-control" name="location" id="location"
+              placeholder="Apartment, studio or floor" required />
           </div>
         </div>
-        <div class="d-flex flex-row-reverse">
-          <button type="submit" class="btn btn-primary">Save</button>
+
+        <div class="col-6">
+          <div class="form-group mb-3">
+            <label for="description" class="col-sm-2 col-form-label">Description</label>
+            <textarea rows="5" type="textarea" class="form-control" name="description" id="description"
+              required></textarea>
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="quota" class="col-sm-2 col-form-label">Quota</label>
+            <input type="text" class="form-control" name="quota" id="quota" placeholder="10" required />
+          </div>
+
+          <div class="form-group">
+            <label for="image" class="col col-form-label">Image</label>
+            <input type="url" class="form-control" name="image" id="image" placeholder="http://image.com/example.jpg"
+              required />
+          </div>
         </div>
-      </form>
-    </div>
-  </main>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck1" name="highlight">
+        <label class="form-check-label" for="gridCheck1">
+          Highlight
+        </label>
+      </div>
+      <div class="d-flex flex-row-reverse">
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </form>
+  </div>
+</main>
 
-  <script>
+<script>
+</script>
 
-  </script>
+<footer><%- include('../../partials/footer'); %></footer>
 
-  <footer><%- include('../../partials/footer'); %></footer>
 </html>

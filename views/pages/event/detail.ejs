@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include('../../partials/head'); %>
+</head>
+
+<body>
+  <%- include('../../partials/header'); %>
+</body>
+
+<main>
+  <!--Those link-->
+  <form id="eventForm" action="/event/detail/<%= event._id%>" method="GET">
+    <container>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="http://localhost:3000/">Home</a></li>
+          <li class="breadcrumb-item"><a href="/event">Event</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Event title</li>
+        </ol>
+      </nav>
+    </container>
+
+    <div class="row row-cols-1 row-cols-md-2">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= event.eventTitle %></h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary"><%= event.organizer %></h6>
+            <p class="card-text"><%= event.description %></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><%= event.datetime %></li>
+            <li class="list-group-item"><%= event.location %></li>
+            <li class="list-group-item"><%= event.quota %></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="ratio ratio-4x3">
+            <img class="img-fluid img-thumbnail" style="object-fit:cover"
+              src="https://picsum.photos/seed/picsum4/300/300" />
+          </div>
+          <div class="card-body">
+            <h5 class="card-subtitle mb-2 text-body-secondary">Become a volunteer</h5>
+            <p class="card-text">Your time and talent can make a real difference in people's life.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </form>
+</main>
+
+</html>
